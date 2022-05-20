@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IProduct } from './model/Product';
 
 @Component({
@@ -60,5 +60,53 @@ export class AppComponent {
   ]
   AdminName = 'Thái hoàng'
   AdminIdentity = '12345'
+  //định nghĩa hàm khi click  vào thẻ h1
+  schooleName=  "";
+  clickH1(){
+    console.log("Đã kích vào");
+    this.schooleName = 'Poly';
+  }
+  //dịnh nghĩ khi hàm click ẩn hiện
+  showStatus =  true;
+  changeTableStatus(){
+    this.showStatus = !this.showStatus;
+  }
+  //địng nghĩ hàm khi thay dổi nội dung input
+  inputValue = 'tuannda3';
+  changeInput(e: any){
+    this.inputValue = e.targer.value;
+  }
+  //định nghĩ form
+  inputValues = {
+    name: "",
+    age: "",
+    image: "",
+    gender:"0"
+  };
+  // onInputName(event: any, info: string){
+  //   this.inputValues.name = event.targer.value;
+  // }
+  // onInputAge(event: any, info: string){
+  //   this.inputValues.age =  event.targer.value
+  // }
+  onSubmit(){
+    console.log(this.inputValues);
+    this.teacher.push({
+      ...this.inputValues,
+      age: +this.inputValues.age,
+      id: this.teacher.length + 1,
+      gender: +this.inputValues.gender,
+      status: 0
+    });
+    this.inputValues = {
+      name: "",
+      age: "",
+      image:"",
+      gender: "0",
+    };
+  }
+  onInput(event:any, key: 'name'|'age'|'image'| 'gender'){
+    this.inputValues[key] = event.target.value;
+  }
 
 }

@@ -1,0 +1,21 @@
+<p>{{userForm.value | json}}</p>
+<form (ngSubmit)="onSubmit(userForm.value)" #userForm="ngForm">
+    <div class="form-group">
+      <label for="">Username</label>
+      <input type="text" class="form-control" name="name" ngModel required #name="ngModel" minlength="8">
+      <app-showvalidate [field]="name" key="Tên"></app-showvalidate>
+      <!-- <span class="text-danger" *ngIf="(name.dirty || name.touched) && name.errors?.['required']">bạn chưa nhập Username</span>
+      <span class="text-danger" *ngIf="(name.dirty || name.touched) && name.errors?.['minlength']">Username nhập đủ 6 ký tự trở lên</span> -->
+    </div>
+    <div class="form-group">
+      <label for="">Age</label>
+      <input type="number" class="form-control" name="age" ngModel required #age="ngModel" min="1" max="100">
+      <app-showvalidate [field]="age" key="Tuổi"></app-showvalidate>
+      <!-- <span class="text-danger" *ngIf="(age.dirty || age.touched) && age.errors?.['required']">bạn chưa nhập Age</span>
+      <span class="text-danger" *ngIf="(age.dirty || age.touched) && age.errors?.['min']">số tuổi tối thiếu là 1</span>
+      <span class="text-danger" *ngIf="(age.dirty || age.touched) && age.errors?.['max']">số tuổi không vượt quá 100</span> -->
+    </div>
+    <div>
+      <button class="btn btn-success" [disabled]="!userForm.value">Submit</button>
+    </div>
+</form>

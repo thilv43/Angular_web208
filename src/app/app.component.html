@@ -388,12 +388,38 @@
     </table>
   </div> -->
   <div>
-    <h1>Table Teacher</h1>
-    <app-table [users]="teacher"></app-table>
+    <h1 (click)="clickH1">Danh sách giảng viên {{schooleName}}</h1>
+    <app-form></app-form>
+    <hr>
+    <div>
+      <!-- <form action="">
+        <input type="text" (keydown)="changeInput($event)" [value]="inputValue" >
+        {{inputValue}}
+      </form> -->
+      <!-- <div>
+        <p>Đăng ký giảng viên</p>
+        <form action="">
+          <label for="">Tên giảng viên</label>
+          <input type="text" class="form-control" (input)="onInput($event, 'name')" [value]="inputValues.name">
+          <label for="">Tuổi giảng viên</label>
+          <input type="text" class="form-control" (input)="onInput($event, 'age')" [value]="inputValues.age">
+          <label for="">Ảnh giảng viên</label>
+          <input type="text" class="form-control" (input)="onInput($event, 'image')" [value]="inputValues.image">
+          <input type="radio" class="form-check" (input)="onInput($event, 'gender')" [checked]="inputValue.gender === '1'" [value]="1">
+          <input type="radio" class="form-check" (input)="onInput($event, 'gender')" [checked]="inputValue.gender === '0'" [value]="0">
+          <button type="button" (click)="onSubmit()" class="btn btn-danger">Submit</button>
+        </form>
+
+      </div> -->
+      <button class="btn btn-info " (click)="changeTableStatus()">{{showStatus ? "Ẩn" : "Hiện"}} Table teacher </button>
+      <app-table [users]="teacher" *ngIf="showStatus"></app-table>
+
+    </div>
     <h1>Admin</h1>
     Tên admin: <app-name [name]="AdminName"></app-name>
     AdminIdentity : <app-identity [id]="AdminIdentity"></app-identity>
   </div>
+
 
 
 
