@@ -7,6 +7,6 @@
 <span *ngIf="(field.dirty || field.touched) && field.errors?.['max']" class="text-danger">
   {{key}} nhập không quá 100
 </span>
-<span *ngIf="(field.dirty || field.touched) && field.errors?.['minLength']" class="text-danger">
-  {{key}} tối thiểu {{field.errors?.['minLength'].requiredLength}} ký tự
+<span *ngIf="(field.dirty || field.touched) && field.errors?.['minlength']" class="text-danger">
+  {{key}} tối thiểu {{field.errors?.['minlength'].requiredLength}} ký tự
 </span>
