@@ -10,3 +10,6 @@
 <span *ngIf="(field.dirty || field.touched) && field.errors?.['minlength']" class="text-danger">
   {{key}} tối thiểu {{field.errors?.['minlength'].requiredLength}} ký tự
 </span>
+
+<!--usttom validate-->
+<span *ngIf="(field.dirty || field.touched) && field.errors?.['hasProductError']">{{key}} phải chứ từ "products"</span>

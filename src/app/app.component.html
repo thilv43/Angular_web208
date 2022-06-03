@@ -387,10 +387,18 @@
       </tbody>
     </table>
   </div> -->
+  <div class="container">
+    <div>
+      <!-- <h1>Router</h1> -->
+    
+      <!--dây là nơi component router được  render ra-->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
   <div>
-    <h1 (click)="clickH1">Danh sách giảng viên {{schooleName}}</h1>
+    <!-- <h1 (click)="clickH1">Danh sách giảng viên {{schooleName}}</h1>
     <app-form></app-form>
-    <hr>
+    <hr> -->
     <div>
       <!-- <form action="">
         <input type="text" (keydown)="changeInput($event)" [value]="inputValue" >
@@ -411,13 +419,13 @@
         </form>
 
       </div> -->
-      <button class="btn btn-info " (click)="changeTableStatus()">{{showStatus ? "Ẩn" : "Hiện"}} Table teacher </button>
-      <app-table [users]="teacher" *ngIf="showStatus"></app-table>
+      <!-- <button class="btn btn-info " (click)="changeTableStatus()">{{showStatus ? "Ẩn" : "Hiện"}} Table teacher </button>
+      <app-table [users]="teacher" *ngIf="showStatus"></app-table> -->
 
     </div>
-    <h1>Admin</h1>
+    <!-- <h1>Admin</h1>
     Tên admin: <app-name [name]="AdminName"></app-name>
-    AdminIdentity : <app-identity [id]="AdminIdentity"></app-identity>
+    AdminIdentity : <app-identity [id]="AdminIdentity"></app-identity> -->
   </div>
 
 

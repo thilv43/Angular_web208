@@ -8,8 +8,8 @@ import { Component, OnInit ,Input} from '@angular/core';
 export class ShowvalidateComponent implements OnInit {
   @Input() field: any;
   @Input() key!: string;
-  constructor() { 
-    
+  constructor() {
+
   }
   ngOnInit(): void {
   }

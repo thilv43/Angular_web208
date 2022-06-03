@@ -1,0 +1,10 @@
+<form action="" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <div class="form-groud">
+    <label for="">Name</label>
+    <input type="text" class="form-control" formControlName="Name" >
+    <app-showvalidate [field]="productForm.get('name')" key="Tên sản phảm"></app-showvalidate>
+  </div>
+  <div>
+    <button class="btn btn-bg-warning">Submit</button>
+  </div>
+</form>
