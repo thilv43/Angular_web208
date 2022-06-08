@@ -18,12 +18,11 @@
         <td><app-table-gender [gender]="teachers.gender ? 'Nam' : 'Nữ' "></app-table-gender></td>
         <td>
           <app-table-avatar [src]="teachers.image" [age]="teachers.age"></app-table-avatar>
-          <!-- <img src="{{teachers.image}}" alt="{{teachers.name}}" width="20%" height="20%"> -->
+
         </td>
         <td>
           <app-table-status [status]="teachers.status"></app-table-status>
-          <!-- <span *ngIf="teachers.status === 1">Đi làm</span>
-          <span *ngIf="teachers.status === 0">Đã nghỉ làm</span> -->
+
         </td>
       </tr>
     </tbody>

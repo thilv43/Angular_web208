@@ -10,6 +10,7 @@
           <th>ID</th>
           <th>NAME</th>
           <th>Active</th>
+          <th>Status</th>
         </tr>
       </thead>
       <tbody>
@@ -17,8 +18,14 @@
           <td>{{product.id}}</td>
           <td>{{product.name}}</td>
           <td>
+            <button >On</button>
+            <button>Off</button>
+          </td>
+          <td>
             <a routerLink="/admin/products/{{product.id}}">Details</a>
+            <button class="btn btn-bg-info" onclick="onEdti(product.id)">Edit</button>
             <button class="btn btn-bg-danger" onclick="onDelete(product.id)">Delete</button>
+
           </td>
         </tr>
       </tbody>

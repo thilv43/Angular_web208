@@ -22,4 +22,7 @@ export class ProductService {
   createProduct(data: ProductCreate): Observable<IProduct>{
     return this.http.post<IProduct>(`${environment.products}`, data);
   }
+  updateProduct(id: string, data: ProductCreate): Observable<IProduct>{
+    return this.http.put<IProduct>(`${environment.products}/${id}`,data);
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit , EventEmitter, Input, Output} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-users-list',
@@ -6,7 +6,9 @@ import { Component, OnInit , EventEmitter, Input, Output} from '@angular/core';
   styleUrls: ['./users-list.component.css']
 })
 export class UsersListComponent implements OnInit {
+  // dữ liệu sẽ nhận từ cha chứ không quản lý nữa
   @Input() users: any;
+
   @Output() handleDelete: EventEmitter<number>;
   @Output() handleEdit: EventEmitter<number>;
   constructor() {
@@ -16,11 +18,12 @@ export class UsersListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onEdit(userId: number){
+
+  onEdit(userId: number) {
     this.handleEdit.emit(userId);
   }
-  onDelete(userId: number){
+
+  onDelete(userId: number) {
     this.handleDelete.emit(userId);
   }
-
 }
