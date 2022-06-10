@@ -1,16 +1,52 @@
 {
-    "products": [
-        {
-          "id": 1,
-          "name": "Iphone11"
-        },
-        {
-          "id": 2,
-          "name": "Iphone13"
-        },
-        {
-          "id": 3,
-          "name": "Iphone13"
-        }
-    ]
+  "products": [
+    {
+      "id": 1,
+      "name": "Iphone122",
+      "status": 1
+    },
+    {
+      "id": 2,
+      "name": "Iphone13",
+      "status": 1
+    },
+    {
+      "id": 3,
+      "name": "products 12",
+      "status": 1
+    },
+    {
+      "name": "products 43",
+      "id": 9
+    },
+    {
+      "name": "Iphone122",
+      "id": 11
+    },
+    {
+      "name": "products 12",
+      "id": 12
+    },
+    {
+      "name": "products 43",
+      "id": 13
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "admin1@gmail.com",
+      "password": "1234566"
+    },
+    {
+      "email": "thilv@gmail.com",
+      "password": "12345678",
+      "id": 2
+    },
+    {
+      "email": "thilv@gmail.com",
+      "password": "12345678",
+      "id": 3
+    }
+  ]
 }

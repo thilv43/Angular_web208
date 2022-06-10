@@ -21,17 +21,22 @@ export class AdminProductListComponent implements OnInit {
       this.products = data;
     })
   }
-  onDelete(id: string| number){
-    //comfrim
-    const confirmDelete = confirm("Bạn có chắc chắn muốn xóa không");
-    //kiểm tra dữ liệu
-    if(confirmDelete && id){
-      this.productService.deleteProduct(id).subscribe((data) => {
-        //câp nhập lại danh
+  onDelete(id: string | number){
+      //confirm
+      const confirmDelete = confirm("bạn có chắc chắn muốn xóa không");
+      if(confirmDelete && id){
+        this.productService.deleteProduct(id).subscribe((data) => {
+          this.onGetList();
+        })
+      }
+  }
+  onUpdateStatus(produtId: number, newStatus: number){
+      this.productService.updateProduct(`${produtId}`, {
+  status: newStatus,
+  name: ''
+}).subscribe(data => {
         this.onGetList();
       })
-    }
-
   }
 
 }

@@ -1,3 +1,4 @@
+import { LoginComponent } from './pages/auth/login/login.component';
 import { AdminProductFormComponent } from './pages/admin/admin-product/admin-product-form/admin-product-form.component';
 import { AdminProductListComponent } from './pages/admin/admin-product/admin-product-list/admin-product-list.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
@@ -7,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { NgModule} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminProductDetailComponent } from './pages/admin/admin-product/admin-product-detail/admin-product-detail.component';
+import { CanAccessAdminGuard } from './guards/can-access-admin.guard';
 
 const routes: Routes = [
   {
@@ -26,39 +28,41 @@ const routes: Routes = [
   {
     path:"admin",
     component: AdminLayoutComponent,
-    children:[
+    canActivate: [CanAccessAdminGuard],
+    children: [
       {
-        path: "",
-        redirectTo: "users",
-        pathMatch: 'full'
-      },
-      {
-        path: "users",
-        component: UsersComponent
+        path: "products",
+        children: [
+          {
+            path: "",
+            component: AdminProductListComponent
+          },
+          {
+            path:"create",
+            component: AdminProductFormComponent
+          },
+          {
+            path: "edit/:id",
+            component: AdminProductFormComponent
+          },
+          {
+            path:"id",
+            component: AdminProductDetailComponent
+          }
+        ]
       }
     ]
   },
   {
-    path: "products",
+    path: "auth",
     children: [
       {
-        path: "",
-        component: AdminProductListComponent
-      },
-      {
-        path:"create",
-        component: AdminProductFormComponent
-      },
-      {
-        path: "edit/:id",
-        component: AdminProductFormComponent
-      },
-      {
-        path:"id",
-        component: AdminProductDetailComponent
+        path:'login',
+        component: LoginComponent
       }
     ]
   }
+
   // {
   //   path: "users",
 
@@ -84,6 +88,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [CanAccessAdminGuard]
 })
 export class AppRoutingModule { }

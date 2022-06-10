@@ -26,6 +26,10 @@ import { AdminProductDetailComponent } from './pages/admin/admin-product/admin-p
 import { AdminProductFormComponent } from './pages/admin/admin-product/admin-product-form/admin-product-form.component';
 import { AdminProductListComponent } from './pages/admin/admin-product/admin-product-list/admin-product-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './pages/auth/login/login.component';
+import { HeaderComponent } from './layouts/client-layout/header/header.component';
+import { BannerComponent } from './layouts/client-layout/banner/banner.component';
+import { FooterComponent } from './layouts/client-layout/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +52,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     AdminProductDetailComponent,
     AdminProductFormComponent,
     AdminProductListComponent,
+    LoginComponent,
+    HeaderComponent,
+    BannerComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

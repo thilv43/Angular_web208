@@ -13,16 +13,16 @@ export class AdminProductFormComponent implements OnInit {
   productId: string;
 
   constructor(
-    private productService: ProductService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute
+    private productService: ProductService, //các phương thức API
+    private router: Router, //diều hướng
+    private activatedRoute: ActivatedRoute // lấy các tham số trên URL
     ) {
     this.productForm = new FormGroup({
       name: new FormControl('', [
         Validators.required,
         Validators.minLength(8),
         Validators.maxLength(50),
-        this.onValidateNameHasProduct
+        this.onValidateNameHasProduct //chỉ gọi lại tên hàm validate
 
       ]) //FormControl(giá trị mặc định)
     })
@@ -33,8 +33,9 @@ export class AdminProductFormComponent implements OnInit {
     this.productId = this.activatedRoute.snapshot.params['id'];
     if(this.productId){
       this.productService.getProduct(+this.productId).subscribe(data => {
+        //cập nhập form data
         this.productForm.patchValue({
-          name: data.name
+          name: data.name,
         })
       })
     }

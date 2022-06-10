@@ -3,4 +3,5 @@ export interface IProduct {
 }
 export type ProductCreate = {
   name: string,
+  status?: number
 }

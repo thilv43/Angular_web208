@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class ProductService {
   //khai báo http để có đối tượng HttpClient tương tác các phương thức của API
   constructor(private http:HttpClient) {}
+  //kieur dữ liệu Obser lắng nghe API trả về kết quả
   getProducts(): Observable<IProduct[]>{
     return this.http.get<IProduct[]>(environment.products)
   }
@@ -19,10 +20,11 @@ export class ProductService {
   deleteProduct(id: string| number): Observable<any>{
     return this.http.delete(`${environment.products}/${id}`);
   }
+  //dũ liệu gửi di {name: string}  nhận về {id: number, name: string}
   createProduct(data: ProductCreate): Observable<IProduct>{
     return this.http.post<IProduct>(`${environment.products}`, data);
   }
   updateProduct(id: string, data: ProductCreate): Observable<IProduct>{
-    return this.http.put<IProduct>(`${environment.products}/${id}`,data);
+    return this.http.patch<IProduct>(`${environment.products}/${id}`,data);
   }
 }

@@ -3,11 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 const apiUrl = "http://localhost:3000";
-//api đường dẫn 
+//api đường dẫn
 
 export const environment = {
   production: false,
-  products: `${apiUrl}/products`
+  products: `${apiUrl}/products`,
+  login: `${apiUrl}/users`
 };
 
 /*

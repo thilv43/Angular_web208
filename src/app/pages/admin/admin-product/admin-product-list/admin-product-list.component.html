@@ -1,8 +1,3 @@
-<div>
-  <a routerLink="/admin/products/create">
-    <button class="btn btn-bg-secondary">thêm mơi</button>
-  </a>
-</div>
 <div class="table table-hover">
     <table>
       <thead>
@@ -18,13 +13,18 @@
           <td>{{product.id}}</td>
           <td>{{product.name}}</td>
           <td>
-            <button >On</button>
-            <button>Off</button>
+            <button *ngIf="product.status === 1" class="btn btn-bg-success" (click)="onUpdateStatus(product.id, 0)" >On</button>
+            <button *ngIf="product.status === 0" class="btn btn-bg-dark" (click)="onUpdateStatus(product.id, 1)">Off</button>
           </td>
           <td>
-            <a routerLink="/admin/products/{{product.id}}">Details</a>
-            <button class="btn btn-bg-info" onclick="onEdti(product.id)">Edit</button>
-            <button class="btn btn-bg-danger" onclick="onDelete(product.id)">Delete</button>
+            <a routerLink="/admin/products/{{product.id}}">
+              <button class="btn-btn-bg-warrios">Detail</button>
+            </a>
+            <a routerLink="/admin/products/edit/{{product.id}}">
+              <button class="btn btn-bg-info">Edit</button>
+            </a>
+
+            <button class="btn btn-bg-danger" (click)="onDelete(product.id)">Delete</button>
 
           </td>
         </tr>
