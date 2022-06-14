@@ -24,40 +24,40 @@ export class AppComponent {
     }
   ]
 
-  teacher: IProduct[] = [
-    {
-      id: 1,
-      name: "nguyen van hoàng",
-      age: 30,
-      gender: 1,
-      image: 'https://nativespeaker.vn/uploaded/page_291_1510282215_1510282225.jpg',
-      status: 0
-    },
-    {
-      id: 2,
-      name: "nguyen thị nụ",
-      age: 20,
-      gender: 0,
-      image: "https://nativespeaker.vn/uploaded/page_291_1510282215_1510282225.jpg",
-      status: 1
-    },
-    {
-      id: 3,
-      name: "nguyen van khánh",
-      age: 50,
-      gender: 1,
-      image: "https://nativespeaker.vn/uploaded/page_291_1510282215_1510282225.jpg",
-      status: 1
-    },
-    {
-      id: 4,
-      name: "nguyen thị hoa",
-      age: 18,
-      gender: 0,
-      image: "https://nativespeaker.vn/uploaded/page_291_1510282215_1510282225.jpg",
-      status: 0
-    }
-  ]
+  // teacher: IProduct[] = [
+  //   {
+  //     id: 1,
+  //     name: "nguyen van hoàng",
+  //     age: 30,
+  //     gender: 1,
+  //     image: 'https://nativespeaker.vn/uploaded/page_291_1510282215_1510282225.jpg',
+  //     status: 0
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "nguyen thị nụ",
+  //     age: 20,
+  //     gender: 0,
+  //     image: "https://nativespeaker.vn/uploaded/page_291_1510282215_1510282225.jpg",
+  //     status: 1
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "nguyen van khánh",
+  //     age: 50,
+  //     gender: 1,
+  //     image: "https://nativespeaker.vn/uploaded/page_291_1510282215_1510282225.jpg",
+  //     status: 1
+  //   },
+  //   {
+  //     id: 4,
+  //     name: "nguyen thị hoa",
+  //     age: 18,
+  //     gender: 0,
+  //     image: "https://nativespeaker.vn/uploaded/page_291_1510282215_1510282225.jpg",
+  //     status: 0
+  //   }
+  // ]
   AdminName = 'Thái hoàng'
   AdminIdentity = '12345'
   //định nghĩa hàm khi click  vào thẻ h1
@@ -89,24 +89,24 @@ export class AppComponent {
   // onInputAge(event: any, info: string){
   //   this.inputValues.age =  event.targer.value
   // }
-  onSubmit(){
-    console.log(this.inputValues);
-    this.teacher.push({
-      ...this.inputValues,
-      age: +this.inputValues.age,
-      id: this.teacher.length + 1,
-      gender: +this.inputValues.gender,
-      status: 0
-    });
-    this.inputValues = {
-      name: "",
-      age: "",
-      image:"",
-      gender: "0",
-    };
-  }
-  onInput(event:any, key: 'name'|'age'|'image'| 'gender'){
-    this.inputValues[key] = event.target.value;
-  }
+  // onSubmit(){
+  //   console.log(this.inputValues);
+  //   this.teacher.push({
+  //     ...this.inputValues,
+  //     age: +this.inputValues.age,
+  //     id: this.teacher.length + 1,
+  //     gender: +this.inputValues.gender,
+  //     status: 0
+  //   });
+  //   this.inputValues = {
+  //     name: "",
+  //     age: "",
+  //     image:"",
+  //     gender: "0",
+  //   };
+  // }
+  // onInput(event:any, key: 'name'|'age'|'image'| 'gender'){
+  //   this.inputValues[key] = event.target.value;
+  // }
 
 }

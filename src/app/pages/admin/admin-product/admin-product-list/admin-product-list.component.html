@@ -4,14 +4,23 @@
         <tr>
           <th>ID</th>
           <th>NAME</th>
-          <th>Active</th>
-          <th>Status</th>
+          <th>AUTHOR</th>
+          <th>PRICE</th>
+          <th>IMAGE</th>
+          <th>DESCRIPTION</th>
+          <th>STATUS</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let product of products">
           <td>{{product.id}}</td>
           <td>{{product.name}}</td>
+          <td>{{product.author}}</td>
+          <td>{{product.price}}</td>
+          <td>
+            <img src={{product.img}} width="100px">
+          </td>
+          <td >{{product.desc}}</td>
           <td>
             <button *ngIf="product.status === 1" class="btn btn-bg-success" (click)="onUpdateStatus(product.id, 0)" >On</button>
             <button *ngIf="product.status === 0" class="btn btn-bg-dark" (click)="onUpdateStatus(product.id, 1)">Off</button>

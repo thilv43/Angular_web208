@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TableAvatarComponent } from './table-avatar.component';
+import { ProductsDetailComponent } from './products-detail.component';
 
-describe('TableAvatarComponent', () => {
-  let component: TableAvatarComponent;
-  let fixture: ComponentFixture<TableAvatarComponent>;
+describe('ProductsDetailComponent', () => {
+  let component: ProductsDetailComponent;
+  let fixture: ComponentFixture<ProductsDetailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TableAvatarComponent ]
+      declarations: [ ProductsDetailComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TableAvatarComponent);
+    fixture = TestBed.createComponent(ProductsDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

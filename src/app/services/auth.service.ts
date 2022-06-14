@@ -14,6 +14,6 @@ export class AuthService {
   ) { }
 
   login(data: TypeLoginRequest): Observable<TypeLoginResponse> {
-    return this.http.post<TypeLoginResponse>(environment.login, data)
+    return this.http.post<TypeLoginResponse>(`${environment.login}`, data)
   }
 }

@@ -36,6 +36,10 @@ export class AdminProductFormComponent implements OnInit {
         //cập nhập form data
         this.productForm.patchValue({
           name: data.name,
+          author: data.author,
+          image: data.img,
+          description: data.desc,
+          price: data.price
         })
       })
     }

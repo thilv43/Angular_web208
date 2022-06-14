@@ -3,28 +3,26 @@ import { AdminProductFormComponent } from './pages/admin/admin-product/admin-pro
 import { AdminProductListComponent } from './pages/admin/admin-product/admin-product-list/admin-product-list.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
-import { UsersComponent } from './users/users.component';
-import { HomeComponent } from './home/home.component';
 import { NgModule} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminProductDetailComponent } from './pages/admin/admin-product/admin-product-detail/admin-product-detail.component';
 import { CanAccessAdminGuard } from './guards/can-access-admin.guard';
 
 const routes: Routes = [
-  {
-    path: "",
-    component: ClientLayoutComponent,
-    children: [
-      {
-        path: "",
-        component: HomeComponent,
-      },
-      {
-        path: "user",
-        component: UsersComponent
-      }
-    ],
-  },
+  // {
+  //   path: "",
+  //   component: ClientLayoutComponent,
+  //   children: [
+  //     {
+  //       path: "",
+  //       component:
+  //     },
+  //     {
+  //       path: "user",
+  //       component:
+  //     }
+  //   ],
+  // },
   {
     path:"admin",
     component: AdminLayoutComponent,

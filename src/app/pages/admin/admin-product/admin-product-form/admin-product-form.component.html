@@ -2,9 +2,29 @@
   <div class="form-groud">
     <label for="">Name</label>
     <input type="text" class="form-control" formControlName="name" >
-    <app-showvalidate [field]="productForm.get('name')" key="Tên sản phảm"></app-showvalidate>
   </div>
+  <app-showvalidate [field]="productForm.get('name')" key="Tên sản phảm"></app-showvalidate>
+  <div class="form-groud">
+    <label for="">Author</label>
+    <input type="text" class="form-control" formControlName="author" >
+  </div>
+  <app-showvalidate [field]="productForm.get('author')" key="Tên tác giả"></app-showvalidate>
+  <div class="form-groud">
+    <label for="">Price</label>
+    <input type="text" class="form-control" formControlName="price" >
+  </div>
+  <app-showvalidate [field]="productForm.get('price')" key="Giá sản phẩm"></app-showvalidate>
+  <div class="form-groud">
+    <label for="">Image</label>
+    <input type="text" class="form-control" formControlName="image" >
+  </div>
+  <app-showvalidate [field]="productForm.get('image')" key="ảnh"></app-showvalidate>
+  <div class="form-groud">
+    <label for="">Description</label>
+    <input type="text" class="form-control" formControlName="description" >
+  </div>
+  <app-showvalidate [field]="productForm.get('description')" key="mota"></app-showvalidate>
   <div>
-    <button class="btn btn-bg-warning">Submit</button>
+    <button class="btn btn-bg-warning" [disabled]="productForm.valid">Submit</button>
   </div>
 </form>
