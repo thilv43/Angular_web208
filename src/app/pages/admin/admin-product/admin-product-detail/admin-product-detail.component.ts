@@ -21,7 +21,7 @@ export class AdminProductDetailComponent implements OnInit {
 
   ngOnInit(): void {
     const idFormUrl = this.activateRouter.snapshot.params['id'];
-    this.productService.getProduct(idFormUrl).subscribe( (data) => {
+    this.productService.listProduct(idFormUrl).subscribe( (data) => {
       this.product = data;
     })
 

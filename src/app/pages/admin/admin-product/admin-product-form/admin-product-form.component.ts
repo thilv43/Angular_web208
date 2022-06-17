@@ -32,14 +32,15 @@ export class AdminProductFormComponent implements OnInit {
   ngOnInit(): void {
     this.productId = this.activatedRoute.snapshot.params['id'];
     if(this.productId){
-      this.productService.getProduct(+this.productId).subscribe(data => {
+      this.productService.listProduct(+this.productId).subscribe(data => {
         //cập nhập form data
         this.productForm.patchValue({
           name: data.name,
           author: data.author,
           image: data.img,
           description: data.desc,
-          price: data.price
+          price: data.price,
+          price_sale: data.price_sale,
         })
       })
     }

@@ -1,3 +1,4 @@
+import { ProductCategoryComponent } from './pages/product/product-category/product-category.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { AdminProductFormComponent } from './pages/admin/admin-product/admin-product-form/admin-product-form.component';
 import { AdminProductListComponent } from './pages/admin/admin-product/admin-product-list/admin-product-list.component';
@@ -7,22 +8,19 @@ import { NgModule} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminProductDetailComponent } from './pages/admin/admin-product/admin-product-detail/admin-product-detail.component';
 import { CanAccessAdminGuard } from './guards/can-access-admin.guard';
+import { ProductDetailComponent } from './pages/product/product-detail/product-detail.component'
 
 const routes: Routes = [
-  // {
-  //   path: "",
-  //   component: ClientLayoutComponent,
-  //   children: [
-  //     {
-  //       path: "",
-  //       component:
-  //     },
-  //     {
-  //       path: "user",
-  //       component:
-  //     }
-  //   ],
-  // },
+  {
+    path: "",
+    component: ClientLayoutComponent,
+    children: [
+      {
+        path: ":id",
+        component: ProductDetailComponent
+      }
+    ],
+  },
   {
     path:"admin",
     component: AdminLayoutComponent,

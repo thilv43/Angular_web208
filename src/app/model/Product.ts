@@ -1,5 +1,13 @@
-export interface IProduct {
-    id: number, name: string,price: number, age: number, gender: number, img: string, status: number, author: string, desc: string
+export type IProduct = {
+    id: number,
+    name:string,
+    price:number,
+    price_sale:number,
+    desc:string,
+    img:string,
+    author:string,
+    status:number
+
 }
 export type ProductCreate = {
   name: string,

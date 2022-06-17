@@ -16,10 +16,9 @@ import { LoginComponent } from './pages/auth/login/login.component';
 import { HeaderComponent } from './layouts/client-layout/header/header.component';
 import { BannerComponent } from './layouts/client-layout/banner/banner.component';
 import { FooterComponent } from './layouts/client-layout/footer/footer.component';
-import { ProductsComponent } from './pages/products/products.component';
-import { ProductsDetailComponent } from './pages/products/products-detail/products-detail.component';
-import { ProductsCategoryComponent } from './pages/products/products-category/products-category.component';
-import { ProductsHomeComponent } from './pages/products/products-home/products-home.component';
+import { ProductListComponent } from './pages/product/product-list/product-list.component';
+import { ProductDetailComponent } from './pages/product/product-detail/product-detail.component';
+import { ProductCategoryComponent } from './pages/product/product-category/product-category.component';
 
 @NgModule({
   declarations: [
@@ -34,10 +33,9 @@ import { ProductsHomeComponent } from './pages/products/products-home/products-h
     HeaderComponent,
     BannerComponent,
     FooterComponent,
-    ProductsComponent,
-    ProductsDetailComponent,
-    ProductsCategoryComponent,
-    ProductsHomeComponent
+    ProductListComponent,
+    ProductDetailComponent,
+    ProductCategoryComponent
   ],
   imports: [
     BrowserModule,
