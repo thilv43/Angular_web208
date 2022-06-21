@@ -11,7 +11,7 @@
           <div class="row" style="padding-bottom: 2rem; display: grid; grid-template-columns: repeat(3, 1fr);">
               <!-- 1 san pham -->
               <div class="card" *ngFor="let product of products">
-                <a routerLink="" class="motsanpham" style="text-decoration: none; color: black;">
+                <a routerLink="{{product._id}}" class="motsanpham" style="text-decoration: none; color: black;">
                       <div class="card" style="margin: 30px;" >
                         <img class="card-img-top anh" src={{product.img}}>
                         <div class="card-body noidungsp mt-3">

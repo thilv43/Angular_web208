@@ -1,0 +1,17 @@
+<div class="modal-body">
+  <form id="form-signin" class="form-signin mt-2" action="" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-label-group">
+        <input type="username" class="form-control" placeholder="Nhập địa chỉ username" name="username" required autofocus  formControlName="username">
+      </div>
+      <div class="form-label-group">
+          <input type="email" class="form-control" placeholder="Nhập địa chỉ email" name="email" required autofocus  formControlName="email">
+      </div>
+
+      <div class="form-label-group">
+          <input type="password" class="form-control" placeholder="Mật khẩu" name="password" required  formControlName="password">
+      </div>
+      <button class="btn btn-lg btn-block btn-signin text-uppercase text-white" type="submit"
+          style="background: #F5A623">Đăng Ký</button>
+  </form>
+</div>

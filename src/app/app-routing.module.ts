@@ -1,3 +1,4 @@
+import { ProductDetailComponent } from './pages/product/product-detail/product-detail.component';
 import { ProductCategoryComponent } from './pages/product/product-category/product-category.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { AdminProductFormComponent } from './pages/admin/admin-product/admin-product-form/admin-product-form.component';
@@ -8,7 +9,7 @@ import { NgModule} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminProductDetailComponent } from './pages/admin/admin-product/admin-product-detail/admin-product-detail.component';
 import { CanAccessAdminGuard } from './guards/can-access-admin.guard';
-import { ProductDetailComponent } from './pages/product/product-detail/product-detail.component'
+import { SignupComponent } from './pages/auth/signup/signup.component';
 
 const routes: Routes = [
   {
@@ -55,6 +56,10 @@ const routes: Routes = [
       {
         path:'login',
         component: LoginComponent
+      },
+      {
+        path: 'signup',
+        component: SignupComponent
       }
     ]
   }
