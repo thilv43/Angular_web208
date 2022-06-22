@@ -15,6 +15,9 @@ export class SignupComponent implements OnInit {
     private router:Router
   ) {
     this.signupForm = new FormGroup({
+      name: new FormControl('',[
+        Validators.required
+      ]),
       email: new FormControl('',[
         Validators.required
       ]),
@@ -38,7 +41,7 @@ export class SignupComponent implements OnInit {
     this.authService.signup(submitData).subscribe(data => {
       console.log(data);
       localStorage.setItem('loggedInUser', JSON.stringify(data));
-      this.router.navigateByUrl('/admin/products');
+      this.router.navigateByUrl('/auth/login');
     })
   }
 

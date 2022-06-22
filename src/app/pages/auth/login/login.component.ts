@@ -11,8 +11,8 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   constructor(
-    private authService: AuthService,
-    private router: Router,
+    private authService:AuthService,
+    private router:Router
   ) {
     this.loginForm = new FormGroup({
       email: new FormControl('',[
@@ -27,21 +27,17 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   onValidateNameHasProduct(control: AbstractControl): ValidationErrors | null {
-      const inputValue = control.value;
-      if(!inputValue.includes('product')){
-        return {hasProductError: true};
-      }
-      return null;
+    const inputValue = control.value;
+    if(!inputValue.includes('product')){
+      return {hasProductsError: true}
+    }
+    return null
   }
   onSubmit(){
     const submitData = this.loginForm.value;
-    this.authService.login(submitData).subscribe(data => {
-
+    this.authService.signup(submitData).subscribe(data => {
       console.log(data);
-      //1. nếu login thành công thì dữ liệu dẩy lên localstorage
-      //setItem(key luu trong localstorage, chuỗi giá trị)
       localStorage.setItem('loggedInUser', JSON.stringify(data));
-      //2. diều hướng về admin
       this.router.navigateByUrl('/admin/products');
     })
   }

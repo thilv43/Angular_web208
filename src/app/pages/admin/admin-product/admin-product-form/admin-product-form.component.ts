@@ -24,7 +24,13 @@ export class AdminProductFormComponent implements OnInit {
         Validators.maxLength(50),
         this.onValidateNameHasProduct //chỉ gọi lại tên hàm validate
 
-      ]) //FormControl(giá trị mặc định)
+      ]),
+      price: new FormControl(''),
+      price_sale: new FormControl(''),
+      img: new FormControl(''),
+      author: new FormControl(''),
+      desc: new FormControl(''),
+       //FormControl(giá trị mặc định)
     })
     this.productId = '';
   }

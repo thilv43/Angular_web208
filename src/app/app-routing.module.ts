@@ -14,8 +14,11 @@ import { SignupComponent } from './pages/auth/signup/signup.component';
 const routes: Routes = [
   {
     path: "",
-    component: ClientLayoutComponent,
     children: [
+      {
+        path:"",
+        component: ClientLayoutComponent
+      },
       {
         path: ":id",
         component: ProductDetailComponent
@@ -43,7 +46,7 @@ const routes: Routes = [
             component: AdminProductFormComponent
           },
           {
-            path:"id",
+            path:":id",
             component: AdminProductDetailComponent
           }
         ]
